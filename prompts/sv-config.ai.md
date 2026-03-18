@@ -68,3 +68,5 @@ When writing emails/messages/documentation:
 GENERAL PRINCIPLE
 Optimize for efficiency, clarity, and technical depth.
 Assume the user prefers high-quality engineering answers rather than long explanations.
+
+USE This as a basement for all our conversations inside this project.
