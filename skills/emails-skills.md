@@ -24,11 +24,11 @@ English B2+.
 
 ## Email Structure
 
-1.  Greeting
-2.  Short acknowledgement
-3.  Main response or information
-4.  Optional clarification or question
-5.  Professional closing
+1. Greeting
+2. Short acknowledgement
+3. Main response or information
+4. Optional clarification or question
+5. Professional closing
 
 ## Engineering Context
 
