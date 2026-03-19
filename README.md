@@ -12,9 +12,12 @@ This repository aimed to keep knowledge base about AI usage, prompts and skills.
 
 - [Project - Aligned](./prompts/ai-project-aligned-implementation-contract.md)
 - [Project - Configuration](./prompts/ai-new-project-configuration.md)
-- [Project - Lib to skill](./prompts/ai-skill-creating.md)
 - [Project - Context Step-By-Step](./prompts/ai-context-setup.md)
 - [Task - Resolution](./prompts/ai-task-resolution.md)
+
+### Skills
+
+- [Skill - Lib to skill](./prompts/ai-skill-creating.md)
 
 ### Writing
 
