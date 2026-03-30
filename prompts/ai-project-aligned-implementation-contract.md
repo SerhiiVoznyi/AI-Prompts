@@ -1,13 +1,18 @@
-# Project-Aligned Implementation Contract
+# Project-aligned implementation contract
 
-Below is a clean, AI-friendly, language-agnostic prompt set.
-They are structured, explicit, low-ambiguity, and designed to lock Cursor into the project’s existing DNA.
+Structured, language-agnostic prompts to align the assistant with the project’s existing conventions. Use for any stack or paradigm.
 
-I’m using a template style so they work for any language, framework, or paradigm.
+## Placeholders
 
-## PHASE 1 — PROJECT ANALYSIS
+| Placeholder | Meaning |
+|-------------|---------|
+| `{{PLACEHOLDER}}` | Feature, module, or slice of work under discussion (replace before use) |
 
-### 1. Project Understanding
+---
+
+## Phase 1 — Project analysis
+
+### 1. Project understanding
 
 ```txt
 Analyze the entire codebase and output:
@@ -22,7 +27,7 @@ Rules:
 - Keep explanations concise
 ```
 
-### 2. Code Style Inference
+### 2. Code style inference
 
 ```txt
 Infer coding conventions from the existing project:
@@ -41,7 +46,7 @@ Rules:
 - Do NOT introduce external standards or best practices
 ```
 
-### 3. Architecture & Dependencies
+### 3. Architecture and dependencies
 
 ```txt
 Identify architectural layers, modules, or boundaries:
@@ -57,7 +62,7 @@ Rules:
 - Flag violations only if clearly present
 ```
 
-### 4. Component / Class Design Rules
+### 4. Component / class design rules
 
 ```txt
 Analyze how units of code are designed:
@@ -73,7 +78,7 @@ Rules:
 - Generalize only consistent patterns
 ```
 
-### 5. File & Folder Placement
+### 5. File and folder placement
 
 ```txt
 Analyze project structure:
@@ -84,7 +89,7 @@ Analyze project structure:
 
 Task:
 
-- Determine exactly where code for <placeholder> belongs
+- Determine exactly where code for {{PLACEHOLDER}} belongs
 
 Rules:
 
@@ -92,7 +97,7 @@ Rules:
 - Do not introduce new folders unless unavoidable
 ```
 
-### 6. Existing Patterns
+### 6. Existing patterns
 
 ```txt
 Detect patterns already in use:
@@ -107,7 +112,7 @@ Rules:
 - Do NOT introduce new patterns
 ```
 
-### 7. Error Handling & Observability
+### 7. Error handling and observability
 
 ```txt
 Analyze how failures are handled:
@@ -118,7 +123,7 @@ Analyze how failures are handled:
 
 Task:
 
-- Define how errors for <placeholder> must be handled
+- Define how errors for {{PLACEHOLDER}} must be handled
 
 Rules:
 
@@ -126,7 +131,7 @@ Rules:
 - Avoid new abstractions
 ```
 
-### 8. Testing Strategy
+### 8. Testing strategy
 
 ```txt
 Infer the testing philosophy:
@@ -137,7 +142,7 @@ Infer the testing philosophy:
 
 Task:
 
-- Define how <placeholder> should be tested
+- Define how {{PLACEHOLDER}} should be tested
 
 Rules:
 
@@ -145,7 +150,7 @@ Rules:
 - Do not increase test complexity
 ```
 
-### 9. Constraints & Anti-Patterns
+### 9. Constraints and anti-patterns
 
 ```txt
 Identify what should NOT be done:
@@ -160,10 +165,12 @@ Rules:
 - Be explicit and concise
 ```
 
-## PHASE 2 — IMPLEMENTATION CONTRACT
+---
+
+## Phase 2 — Implementation contract
 
 ```txt
-Summarize the agreed rules for implementing <placeholder>:
+Summarize the agreed rules for implementing {{PLACEHOLDER}}:
 
 - Code style rules
 - Architectural constraints
@@ -174,7 +181,9 @@ Summarize the agreed rules for implementing <placeholder>:
 - Testing approach
 ```
 
-## PHASE 3 — CONFIRMATION
+---
+
+## Phase 3 — Confirmation
 
 ```txt
 Ask for explicit confirmation before writing any code.

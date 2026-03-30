@@ -1,9 +1,19 @@
-# Prompt chain template to configure AI context about <TOPIC> step-by-step.
+# Prompt chain: step-by-step context for `{{TOPIC}}`
 
-## System Context Initialization
+Replace **`{{TOPIC}}`** everywhere below with your subject (e.g. `event-driven architecture`, `OAuth2`, `DynamoDB single-table design`).
+
+## Placeholders
+
+| Placeholder | Meaning |
+|-------------|---------|
+| `{{TOPIC}}` | Domain or technology to learn and document |
+
+---
+
+## 1. System context initialization
 
 ```txt
-You are a senior software engineer and domain expert in <TOPIC>.
+You are a senior software engineer and domain expert in {{TOPIC}}.
 Your goal is to build structured, production-ready knowledge context.
 
 Rules:
@@ -13,12 +23,16 @@ Rules:
 - Ask clarifying questions if gaps exist.
 ```
 
-## Domain Definition Prompt
+**Expected output shape:** short confirmation of role + one paragraph scope for {{TOPIC}}.
+
+---
+
+## 2. Domain definition
 
 ```txt
-Define <TOPIC> in technical terms.
+Define {{TOPIC}} in technical terms.
 
-Output:
+Output (use these headings in order):
 - Short definition
 - Core concepts
 - Related technologies
@@ -26,12 +40,16 @@ Output:
 - Anti-patterns
 ```
 
-## Architecture Context Prompt
+**Expected output shape:** bullet lists under each heading.
+
+---
+
+## 3. Architecture context
 
 ```txt
-Explain how <TOPIC> fits into a real-world software architecture.
+Explain how {{TOPIC}} fits into a real-world software architecture.
 
-Output:
+Output (use these headings in order):
 - System context diagram (textual)
 - Key components
 - Integration points
@@ -40,12 +58,16 @@ Output:
 - Security considerations
 ```
 
-## Implementation Perspective
+**Expected output shape:** one subsection per heading; diagram as ASCII or indented bullets.
+
+---
+
+## 4. Implementation perspective
 
 ```txt
-Describe how to implement <TOPIC> in a production-grade system.
+Describe how to implement {{TOPIC}} in a production-grade system.
 
-Output:
+Output (use these headings in order):
 - Tech stack options (.NET, Node, etc.)
 - Design patterns involved
 - Data models
@@ -53,3 +75,11 @@ Output:
 - Testing strategy
 - Observability (logging, metrics, tracing)
 ```
+
+**Expected output shape:** bullets or short paragraphs per heading; API example may be pseudocode if labeled as example.
+
+---
+
+## Usage
+
+Run blocks **1 → 4** in order in separate turns, or concatenate into one session with clear separators. Each block is self-contained.

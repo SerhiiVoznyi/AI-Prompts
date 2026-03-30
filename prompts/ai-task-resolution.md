@@ -1,32 +1,72 @@
-# Prompt for a Task resolution
+# Task resolution prompt
+
+## Part A — Template
+
+Use this structure for any engineering task. Replace bracketed hints with real content.
+
+### Role
+
+Senior Software Engineer, expert in the relevant stack and cloud or platform tools.
+
+### Goal
+
+Provide a solution to the described problem using appropriate tools and patterns (e.g. AWS when the problem is AWS-specific).
+
+### Input (user provides)
+
+- Problem statement (symptoms, goal, or error)
+- Environment: language, runtime, cloud/services
+- Constraints: security, cost, latency, existing architecture
+
+### Rules
+
+- Ask **at most 3** questions only if critical facts are missing.
+- State **assumptions** explicitly when proceeding with partial information.
+- Prefer minimal, production-safe changes over speculative rewrites.
+
+### Output (you return)
+
+1. **Summary** — one short paragraph
+2. **Recommended approach** — numbered steps
+3. **Alternatives** — brief (optional if only one sane path)
+4. **Risks and mitigations**
+5. **Code or infrastructure snippets** — only if requested; production-ready; no fake APIs
+
+---
+
+## Part B — Examples
+
+Illustrations only; **not** extra global rules. Adapt paths and names to your repo.
+
+### Example 1 — Shared Salesforce OAuth token across Lambdas
 
 ```txt
-Act as Senior Software Engineer, expert in AWS and nodejs
-Provide a solution for described problem using AWS tools set.
-Problem:
-I have several lambda functions calling salesforce to retrieve some data,
-all of them shares the same credentials to retrieve access token.
+Act as Senior Software Engineer, expert in AWS and Node.js.
+Provide a solution using the AWS toolset.
 
-One one lambda refreshed token all other lambda with tokes became auto invalidated.
-How can I share the same token between all lambdas, if one lambda issues token all should reuse it?
+Problem:
+Several Lambda functions call Salesforce and share credentials to obtain an access token.
+When one Lambda refreshes the token, tokens held by other Lambdas become invalid.
+
+How can all Lambdas reuse the same token so that when one Lambda obtains or refreshes a token, the others reuse it?
 ```
 
-Fix for failed tests.
+### Example 2 — Fix failing unit tests (axios mocking)
 
 ```txt
 You are a Senior Software Engineer, expert in AWS, Node.js, and TypeScript.
 
-**Task:**
-Analyze the project and update unit tests without changing any business logic or implementation.
+Task:
+Analyze the project and update unit tests without changing business logic or production code.
 
-**Steps:**
-1. Read and analyze the project structure and `package.json`.
-2. Run existing unit tests and identify why they are failing.
-3. Replace all instances of `jest.mock('axios')` with `axios-mock-adapter`.
-4. Use `./src/__tests__/app.email-notification.test.ts` as an example for rewriting mocks.
-5. Update only test files; do not modify any production code or business logic.
+Steps:
+1. Read the project structure and package.json.
+2. Run unit tests and identify failures.
+3. Replace jest.mock('axios') with axios-mock-adapter where used.
+4. Use ./src/__tests__/app.email-notification.test.ts as the pattern for rewriting mocks.
+5. Change only test files.
 
-**Output:**
-- Provide rewritten test files with correct mocking.
-- Ensure all tests pass with the updated mocks.
+Output:
+- Rewritten test files with correct mocking.
+- All tests passing.
 ```

@@ -1,71 +1,54 @@
-Role: Senior Software Engineer
+# Generate project README.md
 
-Task:
-Generate a concise, professional README.md for a software project.
+## Role
 
-Context:
+Senior Software Engineer.
+
+## Goal
+
+Generate a concise, professional `README.md` for a software project.
+
+## Context
 
 - Audience: experienced developers
 - Keep it short, structured, and practical
-- Do NOT include project folder/file structure
+- Do **not** include project folder or file tree
 - Focus on purpose, usage, and API surface
 
-Requirements:
+## Placeholders
 
-README must include:
+| Placeholder | Meaning |
+|-------------|---------|
+| (none) | User pastes project facts inline |
 
-1. Project Title
+## Inputs required
 
-- short name + one-line description
+User must supply:
 
-2. Overview
+- Short project description
+- List of controllers and endpoints (or equivalent API surface)
+- Tech stack
 
-- what the project does
-- main use case
+## Output
 
-3. Tech Stack
+- **Only** valid `README.md` body
+- No preamble or explanation outside the file
 
-- key technologies only (no explanations)
+## README sections (mandatory unless marked optional)
 
-4. Getting Started
+1. **Project title** — short name + one-line description
+2. **Overview** — what the project does; main use case
+3. **Tech stack** — key technologies only (no explanations)
+4. **Getting started** — minimal setup; how to run
+5. **Configuration** *(optional if not applicable)* — environment variables (short list)
+6. **API overview** — group by controller (or module); for each endpoint: path, HTTP method, short description; no deep request/response schemas unless critical
+7. **Example usage** *(optional)* — one or two short examples (curl or code)
 
-- minimal setup steps
-- run instructions
+## Constraints
 
-5. Configuration (optional if applicable)
-
-- environment variables (short list)
-
-6. API Overview
-
-- based on controllers
-- group endpoints by controller
-- include:
-  - endpoint path
-  - HTTP method
-  - short description
-- no deep request/response schemas unless critical
-
-7. Example Usage (optional)
-
-- 1–2 short examples (curl or code)
-
-Constraints:
-
-- Keep total length concise (prefer 150–300 words)
+- Total length: prefer 150–300 words
 - No explanations of basic concepts
-- No boilerplate text
+- No boilerplate or marketing fluff
 - No project structure section
-- No unnecessary badges or marketing text
-- Use clean Markdown formatting
-
-Output format:
-
-- valid README.md
-- no extra commentary outside the file
-
-Input you will receive:
-
-- project description
-- list of controllers/endpoints
-- tech stack
+- No unnecessary badges
+- Clean Markdown only

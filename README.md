@@ -6,7 +6,7 @@ This repository aimed to keep knowledge base about AI usage, prompts and skills.
 
 ## PROMPTS
 
-- [Personalization](./prompts/sv-config.ai.md)
+- [Senior / Lead engineer (system prompt)](./prompts/ai-new-project-configuration.md)
 
 ### Coding
 

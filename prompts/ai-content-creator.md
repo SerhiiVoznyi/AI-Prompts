@@ -1,69 +1,81 @@
-# AI Content Generation Prompt
+# Social post and cover-image brief
 
 ## Role
 
-Act as a professional content creator and social media strategist.
+Professional content creator and social media strategist.
 
-## Task
+## Goal
 
-Create an engaging post about **"TOPIC"**.
+Produce (1) post text and (2) a cover image brief for an image generator, per parameters below.
 
-## Post Requirements
+## Placeholders
 
-- **Tone:** clear, engaging, and easy to read
-- **Target audience:** [briefly specify, e.g. beginners / professionals / general audience]
-- **Length:** [short / medium / long]
+| Placeholder | Meaning |
+|-------------|---------|
+| `{{TOPIC}}` | Subject of the post |
+| `{{AUDIENCE}}` | e.g. beginners, software engineers, general |
+| `{{LENGTH}}` | short, medium, or long |
+| `{{TONE}}` | e.g. professional, conversational |
+| `{{STYLE}}` | Visual style for the cover (e.g. cyberpunk, minimal) |
+| `{{MOOD_COLORS}}` | e.g. dark minimal, vibrant |
+| `{{VISUAL_ELEMENTS}}` | Main objects, symbols, or scene |
+| `{{IMAGE_TEXT}}` | Short on-image text, or "none" |
+
+## Post requirements
+
+- **Tone:** `{{TONE}}` — clear, engaging, readable
+- **Audience:** `{{AUDIENCE}}`
+- **Length:** `{{LENGTH}}`
 
 ### Structure
 
 - Strong hook in the first line
-- 2–4 concise paragraphs or bullet points
+- Two to four short paragraphs or bullet points
 - Clear takeaway or call to action at the end
 
 ### Emojis
 
-- Use relevant emojis throughout the text to increase engagement
-- Do not overuse emojis 🎯✨
+- Use relevant emojis for engagement; do not overuse
 
-## Cover Image Instructions
+## Cover image brief
 
-- Generate a cover image concept in **"STYLE"** style
-- **Mood & colors:** [describe briefly, e.g. dark, minimal, pastel, vibrant]
-- **Main visual elements:** [key objects, symbols, or scene]
-- **Text on image (if any):** short, bold, and readable
+- Style: `{{STYLE}}`
+- Mood and colors: `{{MOOD_COLORS}}`
+- Main visual elements: `{{VISUAL_ELEMENTS}}`
+- Text on image: `{{IMAGE_TEXT}}` (short, bold, readable, or none)
 
-## Output Format
+## Output format (strict order)
 
-1. Post text
-2. Emoji suggestions (optional list)
+1. Post text about **`{{TOPIC}}`**
+2. Emoji suggestions (optional short list)
 3. Detailed cover image description ready for an image generator
 
-```txt
-Act as a professional content creator and social media strategist.
-Create an engaging post with text about:
+Do not add sections outside this list unless the user asks.
 
->
-
-Post Requirements:
-    - Tone: Professional
-    - Target audience: Software engineers
-    - Length: medium
-Structure:
-    - Bold Title/First line
-    - Strong hook in the first line
-    - 1–2 concise paragraphs or bullet points
-    - Clear takeaway or call to action at the end
-    - Bold keywords
-    - add hashtags
-Constraints:
-    - Use relevant emojis throughout the text to increase engagement
-    - Do not overuse emojis
-```
+## Optional copy-paste (fill placeholders)
 
 ```txt
 Act as a professional content creator and social media strategist.
-Generate a cover image about "Usage of .NET 10 in software development".
-In "Cyberpunk 2077" style.
-    - Main visual elements: Software Engineers work in a datacenter with AI
-    - Text on image (if any): short, bold, and readable
+Create an engaging post about: {{TOPIC}}
+
+Tone: {{TONE}}
+Audience: {{AUDIENCE}}
+Length: {{LENGTH}}
+
+Structure: bold title or first line; strong hook; 1–2 paragraphs or bullets; takeaway or CTA; bold keywords; hashtags where appropriate.
+Use relevant emojis; do not overuse.
 ```
+
+```txt
+Cover image brief for {{TOPIC}}.
+Style: {{STYLE}}
+Mood and colors: {{MOOD_COLORS}}
+Main visual elements: {{VISUAL_ELEMENTS}}
+Text on image: {{IMAGE_TEXT}}
+```
+
+## Input / output contract
+
+**User provides:** values for placeholders (or free-form instructions covering the same facts).
+
+**You return:** items 1–3 under **Output format** only, unless the user asks for variants.
